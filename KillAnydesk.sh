@@ -13,6 +13,7 @@ do
 	then
 			echo $(ps -ef | grep $ProcessName | grep -vi grep |head -1| awk '{print $2}'|tail)
 			PID=$(ps -ef | grep $ProcessName | grep -vi grep |head -1| awk '{print $2}'|tail)
+			echo "Killing PID: \$PID"
 			kill $PID
 			if [ $? -eq 0 ]; then
 				echo "Process killed"
